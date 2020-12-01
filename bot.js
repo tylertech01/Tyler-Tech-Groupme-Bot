@@ -1,13 +1,18 @@
 var HTTPS = require('https');
 var cool = require('cool-ascii-faces');
+var name = '';
 
 var botID = process.env.BOT_ID;
 
 function respond() {
   var request = JSON.parse(this.req.chunks[0]),
       botRegex = /^\/tyler tech$/;
+  
+  
+
 
   if(request.text && botRegex.test(request.text)) {
+    name = request.name;
     this.res.writeHead(200);
     postMessage();
     this.res.end();
@@ -22,7 +27,7 @@ function postMessage() {
   var botResponse, options, body, botReq;
    var request = JSON.parse(this.req.chunks[0]),
 
-  botResponse = 'Tyler Tech says: Have a great day, ' + request.name +'! - (action preformed by bot)';
+  botResponse = 'Tyler Tech says: Have a great day, ' + name +'! - (action preformed by bot)';
 
   options = {
     hostname: 'api.groupme.com',
