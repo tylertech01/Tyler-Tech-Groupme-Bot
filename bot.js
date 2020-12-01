@@ -25,7 +25,6 @@ function respond() {
 
 function postMessage() {
   var botResponse, options, body, botReq;
-   var request = JSON.parse(this.req.chunks[0]),
 
   botResponse = 'Tyler Tech says: Have a great day, ' + name +'! - (action preformed by bot)';
 
