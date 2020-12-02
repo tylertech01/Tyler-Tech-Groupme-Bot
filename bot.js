@@ -6,7 +6,7 @@ var botID = process.env.BOT_ID;
 
 function respond() {
   var request = JSON.parse(this.req.chunks[0]),
-      botRegex = /^\/tyler tech$/;
+      botRegex = /^\/h2p$/;
   
   
 
@@ -26,7 +26,7 @@ function respond() {
 function postMessage() {
   var botResponse, options, body, botReq;
 
-  botResponse = 'Tyler Tech says: Have a great day, @' + name +'! - (action preformed by bot)';
+  botResponse = 'Hail to Pitt, @' + name +'!   (action preformed by bot)';
 
   options = {
     hostname: 'api.groupme.com',
@@ -37,6 +37,12 @@ function postMessage() {
   body = {
     "bot_id" : botID,
     "text" : botResponse
+    "attachments" : [
+    {
+      "type"  : "image",
+      "url"   : "https://i.groupme.com/1128x1700.jpeg.a7195ea172fd4f8fbe83eb781d6c098b.large"
+    }
+  ]
   };
 
   console.log('sending ' + botResponse + ' to ' + botID);
