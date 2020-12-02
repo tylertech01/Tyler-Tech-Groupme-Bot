@@ -26,7 +26,7 @@ function respond() {
 function postMessage() {
   var botResponse, options, body, botReq;
 
-  botResponse = 'Tyler Tech says: Have a great day, ' + name +'! - (action preformed by bot)';
+  botResponse = 'Tyler Tech says: Have a great day, @' + name +'! - (action preformed by bot)';
 
   options = {
     hostname: 'api.groupme.com',
