@@ -5,13 +5,15 @@ var name = '';
 var botID = process.env.BOT_ID;
 
 function respond() {
-  var request = JSON.parse(this.req.chunks[0]),
-      botRegex = 'extra-help';
+  var request = JSON.parse(this.req.chunks[0]);
+  
+  var str = request.text;
+  var patt = new RegExp("extra-help");
   
   
 
 
-  if(request.text && botRegex.test(request.text)) {
+  if(request.text && patt.test(str)) {
     name = request.name;
     this.res.writeHead(200);
     postMessage();
