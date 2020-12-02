@@ -6,12 +6,13 @@ var botID = process.env.BOT_ID;
 
 function respond() {
   var request = JSON.parse(this.req.chunks[0]),
+  textfromrequest = request.text;
 
   
   
 
 
-  if(request.text && request.text.includes('http://extra-help')) {
+  if(request.text && textfromrequest.includes('http://extra-help')) {
     name = request.name;
     this.res.writeHead(200);
     postMessage();
