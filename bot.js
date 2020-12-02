@@ -6,12 +6,12 @@ var botID = process.env.BOT_ID;
 
 function respond() {
   var request = JSON.parse(this.req.chunks[0]),
-      botRegex = /^\/h2p$/;
+      botRegex = /^'\'http://extra-help'/;
   
   
 
 
-  if(request.text && botRegex.test(request.text)) {
+  if(request.text && request.text.includes('http://extra-help')) {
     name = request.name;
     this.res.writeHead(200);
     postMessage();
@@ -26,7 +26,7 @@ function respond() {
 function postMessage() {
   var botResponse, options, body, botReq;
 
-  botResponse = 'Hail to Pitt, @' + name +'!   (action preformed by bot)';
+  botResponse = 'Could an admin check out ' + name +'? They are likely a spam bot!  (action preformed by Tyler Tech: The Bot)';
 
   options = {
     hostname: 'api.groupme.com',
@@ -40,7 +40,7 @@ function postMessage() {
     "attachments" : [
     {
       "type"  : "image",
-      "url"   : "https://i.groupme.com/1128x1700.jpeg.a7195ea172fd4f8fbe83eb781d6c098b.large"
+      "url"   : "https://i.groupme.com/717x1154.png.57ecbb9d2de9489792d838751e7e2be2.large"
     }
   ]
   };
