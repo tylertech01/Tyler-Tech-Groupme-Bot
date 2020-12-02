@@ -36,7 +36,7 @@ function postMessage() {
 
   body = {
     "bot_id" : botID,
-    "text" : botResponse
+    "text" : botResponse,
     "attachments" : [
     {
       "type"  : "image",
